@@ -1,0 +1,28 @@
+{
+    "setup-files": [],
+    "rules": [
+        {
+            "rule": "text",
+            "separator": "-",
+            "width": 80,
+            "heading": "Commit changes to file",
+            "double-space": true
+        },
+        {
+            "rule": "file-contains-in-head",
+            "path": "files/test1.txt",
+            "contents": "test content",
+            "ignore-case": true,
+            "failure-message": "Did you change test1.txt and commit your changes?",
+            "alternative-title": "test1.txt is committed with containing the text 'test content'",
+            "score-if-correct": 10
+        },
+        {
+            "rule": "any-commit-message-contains",
+            "contents": "Add test commit",
+            "ignore-case": true,
+            "alternative-title": "A commit was made with the message 'Add test commit'",
+            "score-if-correct": 10
+        }
+    ]
+}
