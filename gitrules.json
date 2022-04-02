@@ -23,6 +23,82 @@
             "ignore-case": true,
             "alternative-title": "A commit was made with the message 'Add test commit'",
             "score-if-correct": 10
+        },
+        {
+            "rule": "head-exists",
+            "stop-on-fail": true
+        },
+        {
+            "rule": "branch-exists",
+            "branch": "test-branch",
+            "score-if-correct": 15,
+            "alternative-title": "The 'test-branch' branch has been created."
+        },
+        {
+            "rule": "file-contains-in-branch",
+            "branch": "test-branch",
+            "path": "files/test1.txt",
+            "contents": "test content",
+            "ignore-case": true,
+            "score-if-correct": 10,
+            "alternative-title": "'test content' was added to the test1 file in the new branch."
+        },
+        {
+            "rule": "commit-with-message-was-made-on-branch",
+            "branch": "test-branch",
+            "contents": "add new test content",
+            "ignore-case": true,
+            "score-if-correct": 10,
+            "alternative-title": "Changes to the test1 file were initially made on the new branch."
+        },
+        {
+            "rule": "commit-with-message-updated-file",
+            "path": "files/test1.txt",
+            "contents": "add new test content",
+            "ignore-case": true,
+            "score-if-correct": 10,
+            "alternative-title": "The test1 file was committed with the message 'add new test content'"
+        },
+        {
+            "rule": "commit-with-message-was-made-on-branch",
+            "branch": "master",
+            "contents": "Add new test content",
+            "ignore-case": true,
+            "score-if-correct": 10,
+            "alternative-title": "Changes to the test1 file made on the master branch."
+        },
+        {
+            "rule": "file-contains-in-branch",
+            "branch": "master",
+            "contents": "test content",
+            "path": "files/test1.txt",
+            "ignore-case": true,
+            "score-if-correct": 10,
+            "alternative-title": "'test content' was added to the test1 file."
+        },
+        {
+            "rule": "file-tracked-in-branch",
+            "branch": "test-branch",
+            "path": "files/test1.txt",
+            "score-if-correct": 10,
+            "alternative-title": "The test1 file was merged into the 'test-branch' branch."
+        },
+        {
+            "rule": "file-contains-in-branch",
+            "branch": "master",
+            "path": "files/test1.txt",
+            "contents": "test content",
+            "ignore-case": true,
+            "score-if-correct": 15,
+            "alternative-title": "The test1 file has been merged into 'master'."
+        },
+        {
+            "rule": "commit-with-message-was-merged-into-branch",
+            "branch": "master",
+            "contents": "Add file1 file",
+            "ignore-case": true,
+            "score-if-correct": 10,
+            "alternative-title": "The commit that added  has been merged into the 'master' branch"
         }
     ]
 }
